@@ -40,7 +40,7 @@ show.addEventListener('click', () => {
         errMessage.classList.add("d-none");
         document.querySelector(".result").classList.remove("d-none");
         userChoice.innerHTML = 'You Choose : ' + userNumber;
-        computerChoice.innerHTML = 'Computer Choose : ' + rndNumber;
+        computerChoice.innerHTML = 'The Number is : ' + rndNumber;
 
 
         // increating Node. of tries 
