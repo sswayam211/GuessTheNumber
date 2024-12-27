@@ -4,6 +4,7 @@ let message = document.querySelector(" .message");
 let errMessage = document.querySelector('.errorMessage');
 let userChoice = document.querySelector('.user-choice');
 let computerChoice = document.querySelector('.computer-choice');
+let userPrevChoice;
 let rndNumber;
 let tries = 0;
 
@@ -18,10 +19,10 @@ show.addEventListener('click', () => {
             rndNumber = randomNummber(1, 100);
 
         } else if (userNumber > rndNumber) {
-            rndNumber = randomNummber(rndNumber, userNumber);
+            rndNumber = randomNummber(rndNumber, userPrevChoice);
 
         } else if (userNumber < rndNumber) {
-            rndNumber = randomNummber(userNumber, rndNumber);
+            rndNumber = randomNummber(userPrevChoice, rndNumber);
 
         }
 
@@ -45,6 +46,9 @@ show.addEventListener('click', () => {
         // increating Node. of tries 
         tries = tries + 1;
         document.querySelector('.tries').innerHTML = 'Total no. of tries : ' + tries;
+
+        // setting userPrevChoice 
+        userPrevChoice = userNumber;
 
         // seting input to null again 
         document.querySelector("input").value = '';
